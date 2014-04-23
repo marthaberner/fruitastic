@@ -1,0 +1,9 @@
+<p>Welcome</p>
+<div>
+<a href="/fruits/new">Create Fruit</a>
+</div>
+<div><br><br>
+<% @fruits.each do |fruit| %>
+ Name: <%= fruit.name %><br>
+<% end %>
+</div>
