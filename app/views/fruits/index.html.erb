@@ -1,9 +1,10 @@
-<p>Welcome</p>
-<div>
+<div><h1>Fruits</h1>
 <a href="/fruits/new">Create Fruit</a>
-</div>
-<div><br><br>
-<% @fruits.each do |fruit| %>
- Name: <%= fruit.name %><br>
-<% end %>
-</div>
+</div><br><br>
+  <table width="800" border="orange" style="border: 1px solid orange;">
+<tr> <td align="center"><h4>Name</h4></td><td align="center"><h4>Description</h4></td></tr>
+    <% @fruits.each do |fruit| %>
+  <tr><td><p><a href="/fruits/<%=fruit.id %>"><%= fruit.name %></a></p></td>
+    <td><p><a href="/fruits/<%=fruit.id %>"><%= fruit.description %></a></p></td></tr>
+  <% end %>
+  </table>

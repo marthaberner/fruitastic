@@ -9,6 +9,13 @@ feature Fruitastic  do
     fill_in "description", with: "red"
     click_on "Create Fruit"
 
-    expect(page).to have_content "Name: Apple"
+    expect(page).to have_content "apple"
+
+    ## User can click on a fruit for more info
+
+    click_on "apple"
+
+    expect(page).to have_content "apple"
+    expect(page).to have_content "red"
   end
 end
