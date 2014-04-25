@@ -1,15 +1,15 @@
 <div><h1>Fruits</h1>
 </div><br><br>
+<form action="/fruits/<%= @fruit.id %>" method="post" class="delete-form">
+  <input type="hidden" name="_method" value="delete" />
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+  <input type="submit" value="Delete">
+</form>
 <table width="200">
   <tr>
     <td><strong><a href="/fruits/<%= @fruit.id %>/edit">Edit</a></strong></td>
   </tr>
 
-    <form action="/fruits/<%= @fruit.id %>" method="post" class="delete-form">
-      <input type="hidden" name="_method" value="delete" />
-      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-      <input type="submit" value="Delete">
-    </form>
 
   <tr>
     <td><p><strong>Fruit Name:</strong></td>
