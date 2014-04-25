@@ -1,0 +1,17 @@
+<form action="/fruits/<%= @fruit.id %>" method="post">
+  <input type="hidden" name="_method" value="put"/>
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+
+  <p>
+    <label for="fruit_name" class="form-label">Fruit Name</label>
+    <input name="fruit[name]" id="fruit_name" value="<%= @fruit.name %>">
+  </p>
+
+  <p>
+    <label for="fruit_description" class="form-label">Fruit Description</label>
+    <input name="fruit[description]" id="fruit_description" value="<%= @fruit.description %>">
+  </p>
+
+  <p>
+    <input type="submit" value="Update Fruit" class="form-button">
+  </p>

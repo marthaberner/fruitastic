@@ -8,5 +8,8 @@ Rails.application.routes.draw do
 
   get '/fruits/:id', to: 'fruits#show'
 
+  get '/fruits/:id/edit', to: 'fruits#edit'
+
+  put '/fruits/:id', to: 'fruits#update'
 
 end
