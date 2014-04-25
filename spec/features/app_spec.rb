@@ -5,8 +5,8 @@ feature Fruitastic do
     visit '/'
 
     click_link "Create Fruit"
-    fill_in "name", with: "apple"
-    fill_in "description", with: "red"
+    fill_in "Fruit Name", with: "apple"
+    fill_in "Fruit Description", with: "red"
     click_on "Create Fruit"
 
     expect(page).to have_content "apple"
@@ -29,5 +29,11 @@ feature Fruitastic do
     expect(page).to have_content "star fruit"
     expect(page).to have_content "purple"
 
+    ## User can delete a fruit
+
+    click_on "Delete"
+
+    expect(page).to have_no_content "star fruit"
+    expect(page).to have_no_content "purple"
   end
 end

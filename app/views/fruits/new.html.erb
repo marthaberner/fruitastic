@@ -1,7 +1,19 @@
-<div>
-  <form action="/fruits/create" method="post">
-    Name: <input type="text" name="name"/>
-    Description: <input type="text" name="description"/>
-    <input type="submit" value="Create Fruit"/>
-  </form>
-</div>
+<h1>Add A Fruit</h1>
+
+<form action="/fruits" method="post">
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+
+  <p>
+    <label for="fruit_name" class="form-label">Fruit Name</label>
+    <input name="fruit[name]" id="fruit_name">
+  </p>
+
+  <p>
+    <label for="fruit_description" class="form-label">Fruit Description</label>
+    <input name="fruit[description]" id="fruit_description">
+  </p>
+
+  <p>
+    <input type="submit" value="Create Fruit" class="form-button">
+  </p>
+</form>

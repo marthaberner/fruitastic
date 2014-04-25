@@ -12,10 +12,20 @@ class FruitsController < ApplicationController
     @fruit = Fruit.find(params[:id])
   end
 
+  def create
+    @fruit = Fruit.create(params[:id])
+    @fruit.name = params[:fruit][:name]
+    @fruit.description = params[:fruit][:description]
+
+    @fruit.save
+    redirect_to '/'
+  end
+
   def edit
     @fruit = Fruit.find(params[:id])
 
   end
+
 
   def update
     @fruit = Fruit.find(params[:id])
@@ -27,10 +37,11 @@ class FruitsController < ApplicationController
     redirect_to "/fruits/#{@fruit.id}"
   end
 
-  def create
-    Fruit.create(
-      name: params[:name], description: params[:description]
-    )
+  def destroy
+    @fruit = Fruit.find(params[:id])
+    @fruit.destroy
     redirect_to '/'
   end
+
+
 end
