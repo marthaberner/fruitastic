@@ -1,0 +1,37 @@
+<h2>Add A Bike</h2>
+
+<%= form_for @bike do |f| %>
+
+  <% if @bike.errors.present? %>
+    <div class="errors">
+      <h1>There was an error</h1>
+      <ul class="error-list">
+        <% @bike.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<p>
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <%= f.label :year, "Year" %>
+  <%= f.text_field :year %>
+</p>
+
+<p>
+  <%= f.submit "Add Bike" %>
+</p>
+<% end %>
+
+<div>
+  <% @bikes.each do |bike| %>
+  <p><%= bike.name %></p>
+   <p><%= bike.year %></p>
+    <% end %>
+</div>
+

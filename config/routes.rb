@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   delete 'fruits/:id', to: 'fruits#destroy'
 
+  resources :bikes
 end
