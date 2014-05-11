@@ -13,5 +13,12 @@ feature 'Managing Bugs' do
     expect(page).to have_content 'butterfly'
     expect(page).to have_content 'red'
 
+    click_link 'Edit'
+    fill_in 'Color', with: 'Green'
+    click_on 'Update'
+
+    expect(page).to have_content 'butterfly'
+    expect(page).to have_content 'Green'
+    expect(page).to have_no_content 'red'
   end
 end

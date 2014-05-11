@@ -13,25 +13,33 @@
     </div>
   <% end %>
 
-<p>
-  <%= f.label :name, "Name" %>
-  <%= f.text_field :name %>
-</p>
+  <p>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+  </p>
 
-<p>
-  <%= f.label :year, "Year" %>
-  <%= f.text_field :year %>
-</p>
+  <p>
+    <%= f.label :year, "Year" %>
+    <%= f.text_field :year %>
+  </p>
 
-<p>
-  <%= f.submit "Add Bike" %>
-</p>
+  <p>
+    <%= f.submit "Add Bike" %>
+  </p>
 <% end %>
 
-<div>
+<table width="500" border="orange">
+  <thead>
+  <caption><h2>Bikes</h2></caption>
+  <th>Name</th>
+  <th>Year</th>
+  </thead>
+  <tbody>
   <% @bikes.each do |bike| %>
-  <p><%= bike.name %></p>
-   <p><%= bike.year %></p>
-    <% end %>
-</div>
+    <tr>
+    <td><%= bike.name %></td>
+    <td><%= bike.year %></td></tr>
+  <% end %>
+  </tbody>
+</table>
 
