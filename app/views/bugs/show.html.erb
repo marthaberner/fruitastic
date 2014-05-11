@@ -8,6 +8,8 @@
 </dl>
 
 <div class="actions">
-  <%= link_to 'Edit', edit_bug_path(@bug) %>
+  <%= link_to 'Edit', edit_bug_path(@bug) %> |
+
+  <%= link_to 'Delete', bug_path(@bug), method: :delete %>
 </div>
 

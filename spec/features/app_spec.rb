@@ -4,10 +4,10 @@ feature Fruitastic do
   scenario 'User can create a fruit' do
     visit '/'
 
-    click_link "Create Fruit"
+    click_link "Fruit"
     fill_in "Fruit Name", with: "apple"
     fill_in "Fruit Description", with: "red"
-    click_on "Create Fruit"
+    click_on "Add Fruit"
 
     expect(page).to have_content "apple"
 

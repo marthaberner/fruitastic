@@ -1,13 +1,31 @@
-<div><h1>Fruits</h1>
-<p><a href="/fruits/new">Create Fruit</a></p>
-<p><a href="/bikes">Add a Bike</a></p>
-<p><a href="/bugs">Add Bugs</a></p>
 
-</div><br><br>
-  <table width="800" border="orange" style="border: 1px solid orange;">
-<tr> <td align="center"><h4>Name</h4></td><td align="center"><h4>Description</h4></td></tr>
+
+<h1>Add A Fruit</h1>
+
+<form action="/fruits" method="post">
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+
+  <p>
+    <label for="fruit_name" class="form-label">Fruit Name</label>
+    <input name="fruit[name]" id="fruit_name">
+  </p>
+
+  <p>
+    <label for="fruit_description" class="form-label">Fruit Description</label>
+    <input name="fruit[description]" id="fruit_description">
+  </p>
+
+  <p>
+    <input type="submit" value="Add Fruit" class="form-button">
+  </p>
+</form>
+
+  <table width="500" border="black">
+    <thead>
+    <th>Name</th><th>Description</th>
+    </thead>
     <% @fruits.each do |fruit| %>
-  <tr><td><p><a href="/fruits/<%=fruit.id %>"><%= fruit.name %></a></p></td>
-    <td><p><a href="/fruits/<%=fruit.id %>"><%= fruit.description %></a></p></td></tr>
+  <tr><td><a href="/fruits/<%=fruit.id %>"><%= fruit.name %></a></td>
+    <td><a href="/fruits/<%=fruit.id %>"><%= fruit.description %></a></td></tr>
   <% end %>
   </table>

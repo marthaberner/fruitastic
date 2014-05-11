@@ -4,7 +4,7 @@ feature 'Managing Bugs' do
   scenario 'user can add a bug' do
     visit '/'
 
-    click_link 'Add Bugs'
+    click_link 'Bugs'
 
     fill_in 'Bug Name', with: 'butterfly'
     fill_in 'Color', with: 'red'
@@ -20,5 +20,12 @@ feature 'Managing Bugs' do
     expect(page).to have_content 'butterfly'
     expect(page).to have_content 'Green'
     expect(page).to have_no_content 'red'
+
+    click_on 'Delete'
+    expect(page).to have_no_content 'butterfly'
+    expect(page).to have_no_content 'Green'
+
+    expect(page).to have_content 'Add a Bug'
+
   end
 end

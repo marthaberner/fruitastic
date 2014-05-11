@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  get '/', to: 'fruits#index'
+  root 'welcome#index'
 
-  get '/fruits/new', to: 'fruits#new'
+  get '/fruits', to: 'fruits#index'
+
+  #get '/fruits/new', to: 'fruits#new'
 
   get '/fruits/:id', to: 'fruits#show'
 

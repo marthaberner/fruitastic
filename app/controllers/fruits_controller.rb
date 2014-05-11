@@ -2,6 +2,7 @@ class FruitsController < ApplicationController
 
   def index
     @fruits = Fruit.all
+    @fruit = Fruit.new
   end
 
   def new
@@ -18,7 +19,7 @@ class FruitsController < ApplicationController
     @fruit.description = params[:fruit][:description]
 
     @fruit.save
-    redirect_to '/'
+    redirect_to '/fruits'
   end
 
   def edit
