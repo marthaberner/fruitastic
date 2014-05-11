@@ -2,13 +2,19 @@
 <html>
 <head>
   <title>Fruitastic</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<header>
+  <div class="title-container">CRUD Practice
+  </div>
+</header>
+<main>
+<div class="show-container">
 <%= yield %>
-
+</div>
+</main>
 </body>
 </html>

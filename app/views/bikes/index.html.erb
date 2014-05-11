@@ -37,8 +37,9 @@
   <tbody>
   <% @bikes.each do |bike| %>
     <tr>
-    <td><%= bike.name %></td>
-    <td><%= bike.year %></td></tr>
+      <td><%= link_to bike.name, bike_path(bike) %></td>
+      <td><%= bike.year %></td>
+    </tr>
   <% end %>
   </tbody>
 </table>

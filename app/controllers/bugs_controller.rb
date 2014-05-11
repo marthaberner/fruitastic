@@ -17,7 +17,17 @@ class BugsController < ApplicationController
 
   def show
     @bug = Bug.find(params[:id])
+  end
 
+  def edit
+    @bug = Bug.find(params[:id])
+  end
+
+  def update
+    @bug = Bug.find(params[:id])
+    @bug.update_attributes!(bug_params)
+
+    redirect_to bug_path(@bug)
   end
 
   private

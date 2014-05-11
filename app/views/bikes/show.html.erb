@@ -1,6 +1,15 @@
+<h2>Showing Bike</h2>
 
- <%= @bike.name %>
- <%= @bike.year %>
+<dl class="attributes">
+  <dt>Name</dt>
+  <dl><%= @bike.name %></dl>
+  <dt>Year</dt>
+  <dl><%= @bike.year %></dl>
+</dl>
 
- <%= link_to 'Edit', edit_bike_path(@bike) %>
+<div class="actions">
+<%= link_to 'Edit', edit_bike_path(@bike) %>
+
 <%= link_to 'Delete', bike_path(@bike), method: :delete %>
+</div>
+

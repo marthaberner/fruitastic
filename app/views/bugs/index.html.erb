@@ -7,16 +7,16 @@
       <h1>You fucked up!</h1>
       <ul class="erros-list">
         <% @bug.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-          <% end %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-<p>
- <%= f.label :bug_name, "Bug Name" %>
-  <%= f.text_field :bug_name %>
-</p>
+  <p>
+    <%= f.label :bug_name, "Bug Name" %>
+    <%= f.text_field :bug_name %>
+  </p>
 
   <p>
     <%= f.label :color, "Color" %>
@@ -26,11 +26,20 @@
   <p>
     <%= f.submit "Add Bug" %>
   </p>
-  <% end %>
+<% end %>
 
-  <div>
-    <% @bugs.each do |bug| %>
-      <p><%= bug.bug_name %></p>
-      <p><%= bug.color %></p>
-    <% end %>
-  </div>
+<table width="500" border="black">
+  <caption><h2>Bugs</h2></caption>
+  <thead>
+  <th>Name</th>
+  <th>Color</th>
+  </thead>
+  <% @bugs.each do |bug| %>
+    <tbody>
+    <tr>
+      <td><%= link_to bug.bug_name, bug_path(bug) %></td>
+      <td><%= bug.color %></td>
+    </tr>
+    </tbody>
+  <% end %>
+</table>

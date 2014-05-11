@@ -1,2 +1,13 @@
-<%= @bug.bug_name %>
-<%= @bug.color %>
+<h2>Showing Bug</h2>
+
+<dl class="attributes">
+  <dt>Name</dt>
+  <dl><%= @bug.bug_name %></dl>
+  <dt>Color</dt>
+  <dl><%= @bug.color %></dl>
+</dl>
+
+<div class="actions">
+  <%= link_to 'Edit', edit_bug_path(@bug) %>
+</div>
+

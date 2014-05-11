@@ -1,0 +1,29 @@
+<h2>Edit Bug</h2>
+
+<%= form_for @bug do |f| %>
+
+  <% if @bug.errors.present? %>
+    <div class="errors">
+      <h1>You fucked up!</h1>
+      <ul class="erros-list">
+        <% @bug.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :bug_name, "Bug Name" %>
+    <%= f.text_field :bug_name, class: "form-label"%>
+  </p>
+
+  <p>
+    <%= f.label :color, "Color" %>
+    <%= f.text_field :color, class: "form-label" %>
+  </p>
+
+  <p>
+    <%= f.submit "Update", class: "form-button"%>
+  </p>
+<% end %>
