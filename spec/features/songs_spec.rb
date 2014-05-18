@@ -12,4 +12,18 @@ feature 'Songs Manager' do
     expect(page).to have_content 'I Love Rock n Roll'
     expect(page).to have_content 'Joan Jett'
   end
+
+  scenario 'User can show details of individual song' do
+    visit '/'
+
+    click_link 'Songs'
+    fill_in 'song[title]', with: 'I Love Rock n Roll'
+    fill_in 'song[artist]', with: 'Joan Jett'
+    click_on 'Add Song'
+
+    click_link 'Joan Jett'
+
+    expect(page).to have_content 'Joan Jett'
+    expect(page).to have_content 'I Love Rock n Roll'
+  end
 end
