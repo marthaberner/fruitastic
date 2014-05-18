@@ -19,6 +19,16 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
   end
 
+  def edit
+    @car = Car.find(params[:id])
+  end
+
+  def update
+    @car = Car.find(params[:id])
+    @car.update_attributes!(car_params)
+    redirect_to car_path(@car)
+  end
+
   def car_params
     params.require(:car).permit(:model, :year)
   end

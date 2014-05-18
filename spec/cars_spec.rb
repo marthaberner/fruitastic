@@ -15,5 +15,13 @@ feature 'Cars' do
     click_link 'Prius'
     expect(page).to have_content 'Prius'
     expect(page).to have_content '2012'
+
+    click_link 'Edit'
+
+    fill_in 'car[model]', with: 'Mercedes-Benz'
+    click_on 'Update'
+    expect(page).to have_no_content 'Prius'
+    expect(page).to have_content '2012'
+
   end
 end
