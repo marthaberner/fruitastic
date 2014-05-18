@@ -9,15 +9,14 @@ class BikesController < ApplicationController
     @bike = Bike.create(bike_params)
 
     if @bike.save
-      redirect_to bike_path(@bike)
+      redirect_to bikes_path
     else
-      render new_bike_path
+      render 'bikes/index'
     end
   end
 
   def show
     @bike = Bike.find(params[:id])
-
   end
 
   def edit

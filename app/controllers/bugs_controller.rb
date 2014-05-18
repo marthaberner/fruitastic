@@ -9,9 +9,9 @@ class BugsController < ApplicationController
     @bug = Bug.create(bug_params)
 
     if @bug.save
-      redirect_to bug_path(@bug)
+      redirect_to bugs_path
     else
-      render new_bug_path
+      render 'bugs/index'
     end
   end
 

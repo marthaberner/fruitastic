@@ -20,6 +20,8 @@ feature 'Managing Bikes' do
     expect(page).to have_content 'Huffy'
     expect(page).to have_content '1976'
 
+    click_link 'Huffy'
+
     click_on 'Edit'
     fill_in 'Name', with: 'Schwinn'
     fill_in 'Year', with: '1990'
