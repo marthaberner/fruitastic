@@ -23,5 +23,10 @@ feature 'Cars' do
     expect(page).to have_no_content 'Prius'
     expect(page).to have_content '2012'
 
+    click_link 'Delete'
+
+    expect(page).to have_no_content 'Mercedes-Benz'
+    expect(page).to have_content 'Cars'
+
   end
 end
