@@ -8,5 +8,6 @@
 </dl>
 
 <div class="actions">
-  <%= link_to 'Edit', edit_song_path(@song) %>
+  <%= link_to 'Edit', edit_song_path(@song) %> |
+  <%= link_to 'Delete', song_path(@song), method: :delete %>
 </div>

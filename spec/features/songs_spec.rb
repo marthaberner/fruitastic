@@ -32,5 +32,10 @@ feature 'Songs Manager' do
 
     expect(page).to have_content 'Cherry Bomb'
     expect(page).to have_no_content 'I Love Rock n Roll'
+
+    click_link 'Delete'
+    expect(page).to have_no_content 'Joan Jett'
+    expect(page).to have_no_content 'Cherry Bomb'
+    expect(page).to have_content 'Songs'
   end
 end
