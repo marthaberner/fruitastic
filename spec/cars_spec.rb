@@ -11,5 +11,9 @@ feature 'Cars' do
 
     expect(page).to have_content 'Prius'
     expect(page).to have_content '2012'
+
+    click_link 'Prius'
+    expect(page).to have_content 'Prius'
+    expect(page).to have_content '2012'
   end
 end

@@ -13,11 +13,11 @@ class CarsController < ApplicationController
     else
       render 'cars/index'
     end
-
   end
 
-
-
+  def show
+    @car = Car.find(params[:id])
+  end
 
   def car_params
     params.require(:car).permit(:model, :year)

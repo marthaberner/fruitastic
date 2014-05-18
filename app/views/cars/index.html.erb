@@ -6,7 +6,7 @@
 </p>
 
 <p>
-  <%= f.label :year, class: "form-for" %>
+  <%= f.label :year, class: "form-label" %>
   <%= f.text_field :year %>
 </p>
 
@@ -25,7 +25,7 @@
   <tbody>
   <% @cars.each do |car| %>
   <tr>
-    <td><%= car.model %></td>
+    <td><%= link_to car.model, car_path(car) %></td>
     <td><%= car.year %></td>
   </tr>
     <% end %>
