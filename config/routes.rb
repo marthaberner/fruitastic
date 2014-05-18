@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resources :bikes
   resources :bugs
   resources :songs
+  resources :cars
 end

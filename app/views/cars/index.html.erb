@@ -1,0 +1,33 @@
+<%= form_for @car do |f| %>
+
+<p>
+  <%= f.label :model, class: "form-label" %>
+  <%= f.text_field :model %>
+</p>
+
+<p>
+  <%= f.label :year, class: "form-for" %>
+  <%= f.text_field :year %>
+</p>
+
+<p>
+  <%= f.submit "Add Car" %>
+</p>
+
+<% end %>
+
+<table width="500" border="black">
+  <caption><h2>Cars</h2></caption>
+  <thead>
+  <th>Model</th>
+  <th>Year</th>
+  </thead>
+  <tbody>
+  <% @cars.each do |car| %>
+  <tr>
+    <td><%= car.model %></td>
+    <td><%= car.year %></td>
+  </tr>
+    <% end %>
+  </tbody>
+</table>
