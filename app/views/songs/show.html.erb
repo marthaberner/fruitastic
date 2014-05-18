@@ -2,8 +2,11 @@
 
 <dl class="attributes">
   <dt>Artist</dt>
-  <dd><%= @song.artist%></dd>
+  <dl><%= @song.artist%></dl>
   <dt>Title</dt>
-  <dd><%= @song.title %></dd>
+  <dl><%= @song.title %></dl>
 </dl>
 
+<div class="actions">
+  <%= link_to 'Edit', edit_song_path(@song) %>
+</div>

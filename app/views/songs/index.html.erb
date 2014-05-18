@@ -1,9 +1,14 @@
 <%= form_for @song do |f| %>
-
-<p>
-  <%= f.label :title, class: "form-label" %>
-  <%= f.text_field :title %>
-</p>
+  <% if @song.errors.present? %>
+    <div class="errors">
+      <h1>Crap, that's not right!</h1>
+      <ul class="erros-list">
+        <% @song.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
 <p>
   <%= f.label :artist, class: "form-label" %>
@@ -11,7 +16,12 @@
 </p>
 
 <p>
-  <%= f.submit "Add Song" %>
+  <%= f.label :title, class: "form-label" %>
+  <%= f.text_field :title %>
+</p>
+
+<p>
+  <%= f.submit "Add Song", class: "form-button" %>
 </p>
 
 <% end %>

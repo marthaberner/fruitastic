@@ -25,5 +25,12 @@ feature 'Songs Manager' do
 
     expect(page).to have_content 'Joan Jett'
     expect(page).to have_content 'I Love Rock n Roll'
+
+    click_link 'Edit'
+    fill_in 'song[title]', with: 'Cherry Bomb'
+    click_on 'Update'
+
+    expect(page).to have_content 'Cherry Bomb'
+    expect(page).to have_no_content 'I Love Rock n Roll'
   end
 end
