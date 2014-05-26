@@ -1,8 +1,8 @@
 class CarsController < ApplicationController
 
   def index
-    @cars = Car.all
     @car = Car.new
+    @cars = Car.all
   end
 
   def create
@@ -11,7 +11,7 @@ class CarsController < ApplicationController
     if @car.save
       redirect_to cars_path
     else
-      render 'cars/index'
+      render :new
     end
   end
 
@@ -25,8 +25,9 @@ class CarsController < ApplicationController
 
   def update
     @car = Car.find(params[:id])
-    @car.update_attributes!(car_params)
-    redirect_to car_path(@car)
+    @car.update_attributes(car_params)
+
+    redirect_to car_path
   end
 
   def destroy

@@ -1,17 +1,18 @@
+<h2>Update Car</h2>
+
 <%= form_for @car do |f| %>
 
   <p>
-    <%= f.label :model, class: "form-label" %>
-    <%= f.text_field :model %>
+    <%= f.label :model, "Name" %>
+    <%= f.text_field :model, class: "form-label" %>
   </p>
 
   <p>
-    <%= f.label :year, class: "form-label" %>
-    <%= f.text_field :year %>
+    <%= f.label :year, "Year" %>
+    <%= f.text_field :year, class:"form-label" %>
   </p>
 
   <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class:"form-button" %>
   </p>
-
 <% end %>

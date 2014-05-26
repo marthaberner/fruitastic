@@ -8,6 +8,7 @@
 </dl>
 
 <div class="actions">
-<%= link_to 'Edit', edit_car_path %> |
-  <%= link_to 'Delete', car_path(@car), method: :delete %>
+  <%= link_to "Edit", edit_car_path(@car.id) %>
+
+  <%= link_to "Delete", car_path(@car.id), method: :delete %>
 </div>
